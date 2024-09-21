@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        #enrollmentForm {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:disabled {
+            background-color: #ccc;
+        }
+        button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+    </style>
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <script src="/script.js"></script>
+    
+</head>
+<body >
+    <form id="enrollmentForm" method='get'>
+        <h1>Student Enrollment Form</h1>
+        <label for="rollNo">Roll No:</label>
+        <input type="text" id="rollNo" onchange="getStu()" required>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label for="class">Class:</label>
+        <input type="text" id="class" required>
+
+        <label for="birthDate">Birth Date:</label>
+        <input type="date" id="birthDate"  required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address"  required>
+
+        <label for="enrollmentDate">Enrollment Date:</label>
+        <input type="date" id="enrollmentDate"  required>
+
+        <button type="button" id="saveButton" disabled onclick="saveStudent()">Save</button>
+        <button type="button" id="updateButton" disabled onclick="changeStudent()">Update</button>
+        <button type="button" id="resetButton" disabled onclick="resetForm()">Reset</button>
+    </form>
+</body>
+</html>
